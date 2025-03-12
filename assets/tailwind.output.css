@@ -7,8 +7,9 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-green-500: oklch(0.723 0.219 149.579);
-    --color-blue-500: oklch(0.623 0.214 259.815);
-    --spacing: 0.25rem;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --font-weight-bold: 700;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -200,6 +201,9 @@
   .block {
     display: block;
   }
+  .contents {
+    display: contents;
+  }
   .grid {
     display: grid;
   }
@@ -208,12 +212,6 @@
   }
   .table {
     display: table;
-  }
-  .h-64 {
-    height: calc(var(--spacing) * 64);
-  }
-  .w-full {
-    width: 100%;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -239,11 +237,25 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .bg-blue-500 {
-    background-color: var(--color-blue-500);
+  .\!text-xl {
+    font-size: var(--text-xl) !important;
+    line-height: var(--tw-leading, var(--text-xl--line-height)) !important;
   }
-  .bg-green-500 {
-    background-color: var(--color-green-500);
+  .\!text-\[5px\] {
+    font-size: 5px !important;
+  }
+  .\!text-\[20px\] {
+    font-size: 20px !important;
+  }
+  .\!font-bold {
+    --tw-font-weight: var(--font-weight-bold) !important;
+    font-weight: var(--font-weight-bold) !important;
+  }
+  .\!text-\[20xl\] {
+    color: 20xl !important;
+  }
+  .text-green-500 {
+    color: var(--color-green-500);
   }
   .capitalize {
     text-transform: capitalize;
@@ -307,6 +319,10 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-shadow {
   syntax: "*";
